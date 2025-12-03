@@ -220,7 +220,7 @@ void searchingData(tiketing data[], int jumlah_item) {
     bool ditemukan = false;
     
     if (pilihan_search == 1) {
-        char cari_nama[50];
+        char cari_nama[100];
         cout << "Masukkan Nama yang dicari: ";
         cin.ignore();
         cin.getline(cari_nama, 100);
@@ -314,11 +314,11 @@ void transferTiket(tiketing data[], int jumlah_item) {
     cout << "Kategori: " << (data[index].kategori == 0 ? "VIP" : "Reguler") << endl;
     
     // Input nama pemilik baru
-    char nama_baru[50];
+    char nama_baru[100];
     
-    cout << "\nMasukkan Nama Pemilik Baru: ";
+    cout << endl << " Masukkan Nama Pemilik Baru: ";
     cin.ignore();
-    cin.getline(nama_baru, 50);
+    cin.getline(nama_baru, 100);
     
     // Validasi nama tidak boleh mengandung angka
     bool ada_angka = false;
@@ -335,7 +335,7 @@ void transferTiket(tiketing data[], int jumlah_item) {
     }
     
     // Update nama tiket
-    for (int i = 0; nama_baru[i] != '\0' || i < 50; i++) {
+    for (int i = 0; nama_baru[i] != '\0' || i < 100; i++) {
         data[index].nama[i] = nama_baru[i];
         if (nama_baru[i] == '\0') break;
     }
@@ -348,7 +348,7 @@ void transferTiket(tiketing data[], int jumlah_item) {
 }
 
 int main() {
-    tiketing konser[50];
+    tiketing konser[100];
     int jumlah_item = 0;
     int pilihan;
     
