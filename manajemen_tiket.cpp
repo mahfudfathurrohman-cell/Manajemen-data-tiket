@@ -3,7 +3,7 @@
 using namespace std;
 
 struct tiketing {
-    char nama[50];
+    char nama[100];
     long long id;
     int kategori; // 0 = vip, 1 = reguler
 };
@@ -12,9 +12,9 @@ const int MAX_VIP = 30;
 const int MAX_REGULER = 70;
 
 void tampilkanmenu() {
-    cout << endl << "==== Manajemen Data Tiketing ====" << endl;
-    cout << "1. Tambah Item" << endl;
-    cout << "2. Tampilkan Semua Item" << endl;
+    cout << endl << "==== Manajemen Data Tiket ====" << endl;
+    cout << "1. Tambah Tiket" << endl;
+    cout << "2. Tampilkan Semua Tiket" << endl;
     cout << "3. Lihat Stock Tiket" << endl;
     cout << "4. Sorting Data" << endl;
     cout << "5. Searching Data" << endl;
@@ -24,14 +24,14 @@ void tampilkanmenu() {
 }
 
 void tambahItem(tiketing data[], int &jumlah_item) {
-    if (jumlah_item >= 50) {
+    if (jumlah_item >= 100) {
         cout << "Data penuh!" << endl;
         return;
     }
     
     cout << "Masukkan Nama: ";
     cin.ignore();
-    cin.getline(data[jumlah_item].nama, 50);
+    cin.getline(data[jumlah_item].nama, 100);
     
     // Validasi nama tidak boleh mengandung angka
     bool ada_angka = false;
