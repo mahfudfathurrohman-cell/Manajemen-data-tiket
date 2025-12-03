@@ -104,7 +104,7 @@ void tampilkanSemua(tiketing data[], int jumlah_item) {
         return;
     }
     
-    cout << "\n==== Data Tiketing ====" << endl;
+    cout << endl << "==== Data Tiketing ====" << endl;
     for (int i = 0; i < jumlah_item; i++) {
         cout << "Item " << i + 1 << endl;
         cout << "Nama: " << data[i].nama << endl;
@@ -125,11 +125,11 @@ void lihatStock(tiketing data[], int jumlah_item) {
         }
     }
     
-    cout << "\n==== Stock Tiket ====" << endl;
+    cout << endl << "==== Stock Tiket ====" << endl;
     cout << "Tiket VIP:" << endl;
     cout << "  Terisi: " << count_vip << " / " << MAX_VIP << endl;
     cout << "  Tersisa: " << (MAX_VIP - count_vip) << endl;
-    cout << "\nTiket Reguler:" << endl;
+    cout << endl << " Tiket Reguler:" << endl;
     cout << "  Terisi: " << count_reguler << " / " << MAX_REGULER << endl;
     cout << "  Tersisa: " << (MAX_REGULER - count_reguler) << endl;
 }
@@ -141,7 +141,7 @@ void sortingData(tiketing data[], int jumlah_item) {
     }
     
     int pilihan_sort;
-    cout << "\n==== Pilihan Sorting ====" << endl;
+    cout << endl << " ==== Pilihan Sorting ====" << endl;
     cout << "1. Sorting berdasarkan Nama (A-Z)" << endl;
     cout << "2. Sorting berdasarkan ID (Ascending)" << endl;
     cout << "Pilihan: ";
@@ -194,7 +194,7 @@ void sortingData(tiketing data[], int jumlah_item) {
     }
     
     // Tampilkan data setelah sorting
-    cout << "\n==== Data Setelah Sorting ====" << endl;
+    cout << endl << " ==== Data Setelah Sorting ====" << endl;
     for (int i = 0; i < jumlah_item; i++) {
         cout << "Item " << i + 1 << endl;
         cout << "Nama: " << data[i].nama << endl;
@@ -211,7 +211,7 @@ void searchingData(tiketing data[], int jumlah_item) {
     }
     
     int pilihan_search;
-    cout << "\n==== Pilihan Searching ====" << endl;
+    cout << endl << " ==== Pilihan Searching ====" << endl;
     cout << "1. Searching berdasarkan Nama" << endl;
     cout << "2. Searching berdasarkan ID" << endl;
     cout << "Pilihan: ";
@@ -223,9 +223,9 @@ void searchingData(tiketing data[], int jumlah_item) {
         char cari_nama[50];
         cout << "Masukkan Nama yang dicari: ";
         cin.ignore();
-        cin.getline(cari_nama, 50);
+        cin.getline(cari_nama, 100);
         
-        cout << "\n==== Hasil Pencarian ====" << endl;
+        cout << endl << " ==== Hasil Pencarian ====" << endl;
         for (int i = 0; i < jumlah_item; i++) {
             // Membandingkan nama (case sensitive)
             bool cocok = true;
@@ -260,7 +260,7 @@ void searchingData(tiketing data[], int jumlah_item) {
         cout << "Masukkan ID yang dicari: ";
         cin >> cari_id;
         
-        cout << "\n==== Hasil Pencarian ====" << endl;
+        cout << endl << " ==== Hasil Pencarian ====" << endl;
         for (int i = 0; i < jumlah_item; i++) {
             if (data[i].id == cari_id) {
                 cout << "Data Ditemukan!" << endl;
@@ -289,7 +289,7 @@ void transferTiket(tiketing data[], int jumlah_item) {
     }
     
     long long id_tiket;
-    cout << "\n==== Transfer Tiket ====" << endl;
+    cout << endl << " ==== Transfer Tiket ====" << endl;
     cout << "Masukkan ID tiket yang akan ditransfer: ";
     cin >> id_tiket;
     
@@ -308,7 +308,7 @@ void transferTiket(tiketing data[], int jumlah_item) {
     }
     
     // Tampilkan data tiket lama
-    cout << "\nData Tiket Saat Ini:" << endl;
+    cout << endl << " Data Tiket Saat Ini:" << endl;
     cout << "Nama: " << data[index].nama << endl;
     cout << "ID: " << data[index].id << endl;
     cout << "Kategori: " << (data[index].kategori == 0 ? "VIP" : "Reguler") << endl;
@@ -340,8 +340,8 @@ void transferTiket(tiketing data[], int jumlah_item) {
         if (nama_baru[i] == '\0') break;
     }
     
-    cout << "\nTiket berhasil ditransfer!" << endl;
-    cout << "\nData Tiket Setelah Transfer:" << endl;
+    cout << endl << "Tiket berhasil ditransfer!" << endl;
+    cout << endl << "Data Tiket Setelah Transfer:" << endl;
     cout << "Nama: " << data[index].nama << endl;
     cout << "ID: " << data[index].id << endl;
     cout << "Kategori: " << (data[index].kategori == 0 ? "VIP" : "Reguler") << endl;
